@@ -1,0 +1,4 @@
+
+Simple script that fetches latest intraday-data from Yahoo Finance.
+
+Designed to be called daily by cron, script uses gmail to report errors.
