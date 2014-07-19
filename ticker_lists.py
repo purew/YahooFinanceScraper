@@ -16,6 +16,7 @@ COMMODITIES_INDICES = [
     'GLD',
     'SLV',
     'OIL',
+    'CLH15.NYM'
     ]
 
 STO_LARGE_CAP = [
