@@ -12,6 +12,12 @@ WORLD_INDICES = [
     '^N225',
     ]
 
+COMMODITIES_INDICES = [
+    'GLD',
+    'SLV',
+    'OIL',
+    ]
+
 STO_LARGE_CAP = [
     'ABB.ST',
     'ALFA.ST',
