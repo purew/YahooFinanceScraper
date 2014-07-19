@@ -12,34 +12,48 @@ WORLD_INDICES = [
     '^N225',
     ]
 
-OMXS30 = [
+STO_LARGE_CAP = [
     'ABB.ST',
     'ALFA.ST',
+    'ALIV-SDB.ST',
     'ASSA-B.ST',
-    'AZN.ST',
+    'ATCO-A.ST',
     'ATCO-B.ST',
+    'AZN.ST',
     'BOL.ST',
+    'CAST.ST',
+    'EKTA-B.ST',
     'ELUX-B.ST',
     'ERIC-B.ST',
     'GETI-B.ST',
+    'HEXA-B.ST',
     'HM-B.ST',
-    #INVE-B
+    'HUSQ-B.ST',
+    'ICA.ST',
+    'IJ.ST',
+    'INVE-B.ST',
+    'JM.ST',
+    'KINV-B.ST',
     'LUPE.ST',
     'MTG-B.ST',
-    'NDA-SEK.ST',
+    'NCC-B.ST',
+    'RATO-B.ST',
     'SAND.ST',
     'SCA-B.ST',
     'SEB-A.ST',
     'SECU-B.ST',
+    'SHB-A.ST',
     'SKA-B.ST',
     'SKF-B.ST',
+    'SOBI.ST',
     'SSAB-A.ST',
-    'SHB-A.ST',
     'SWED-A.ST',
     'SWMA.ST',
     'TEL2-B.ST',
     'TLSN.ST',
+    'TREL-B.ST',
     'VOLV-B.ST',
+
     ]
 
 

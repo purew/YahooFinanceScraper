@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#
 # The MIT License (MIT)
 #
 # Copyright (c) 2014 Anders Bennehag
@@ -22,40 +24,46 @@
 #
 
 import os
+import argparse
 import yahooscraper
 import sendemail
 import ticker_lists
 
 
-DATA_DIR = 'data'
+DEFAULT_DIR = 'data'
 
 LISTS = [
+    (ticker_lists.WORLD_INDICES, 100),
+    (ticker_lists.STO_LARGE_CAP, 100),
     (ticker_lists.STO_MID_CAP, 1),
     (ticker_lists.STO_SMALL_CAP, 1),
-    (ticker_lists.WORLD_INDICES, 200),
-    (ticker_lists.OMXS30, 200),
     ]
 
 
-def appendToFile(ticker, data):
+def appendToFile(ticker, data, path=DEFAULT_DIR):
     ticker = ticker.replace('^', '_')
-    fname = os.path.join(DATA_DIR, ticker + '.csv')
+    fname = os.path.join(path, ticker + '.csv')
     with open(fname, 'wa') as f:
         for line in data:
             f.write(line + '\n')
 
 
 if __name__ == '__main__':
-
+    parser = argparse.ArgumentParser(
+        description='Fetch intraday-data from Yahoo')
+    parser.add_argument('path', metavar='PATH', type=str,
+                        help='path to save output to')
+    args = parser.parse_args()
     for tlist, minsamples in LISTS:
         for ticker in tlist:
             try:
-                #print 'Fetching {}'.format(ticker)
                 data = yahooscraper.get_intraday(ticker, minsamples)
-                appendToFile(ticker, data)
+                appendToFile(ticker, data, args.path)
             except Exception as e:
                 subject = 'Error parsing ticker {}'.format(ticker)
                 msg = sendemail.formatExceptionMsg(e)
                 sendemail.sendEmail('anders@bennehag.com', subject, msg)
             else:
-                pass
+                print ticker
+
+
