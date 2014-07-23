@@ -43,7 +43,7 @@ LISTS = [
 def appendToFile(ticker, data, path=DEFAULT_DIR):
     ticker = ticker.replace('^', '_')
     fname = os.path.join(path, ticker + '.csv')
-    with open(fname, 'wa') as f:
+    with open(fname, 'a') as f:
         for line in data:
             f.write(line + '\n')
 
