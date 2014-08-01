@@ -34,6 +34,8 @@ DEFAULT_DIR = 'data'
 
 LISTS = [
     (ticker_lists.WORLD_INDICES, 100),
+    (ticker_lists.COMMODITIES_INDICES, 100),
+    (ticker_lists.STO_ETFS, 40),
     (ticker_lists.STO_LARGE_CAP, 100),
     (ticker_lists.STO_MID_CAP, 1),
     (ticker_lists.STO_SMALL_CAP, 1),
@@ -60,6 +62,7 @@ if __name__ == '__main__':
                 data = yahooscraper.get_intraday(ticker, minsamples)
                 appendToFile(ticker, data, args.path)
             except Exception as e:
+                raise
                 subject = 'Error parsing ticker {}'.format(ticker)
                 msg = sendemail.formatExceptionMsg(e)
                 sendemail.sendEmail('anders@bennehag.com', subject, msg)

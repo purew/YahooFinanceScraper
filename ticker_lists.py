@@ -19,6 +19,13 @@ COMMODITIES_INDICES = [
     'CLH15.NYM'
     ]
 
+STO_ETFS = [
+    'XACT-BULL.ST',
+    'XACT-BULL-2.ST',
+    'XACT-BEAR.ST',
+    'XACT-BEAR-2.ST',
+]
+
 STO_LARGE_CAP = [
     'ABB.ST',
     'ALFA.ST',
